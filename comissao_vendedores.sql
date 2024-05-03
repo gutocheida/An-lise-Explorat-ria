@@ -4,7 +4,7 @@ with comissoes_vendedor AS (
         sum(valor) AS total_recebido,
         row_number() over (partition by vendedor order by "data") AS ordem_transferencia
     from
-        tabela_comissoes
+        comissoes
     group by
         vendedor, "data"
 )
